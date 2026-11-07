@@ -1,1 +1,27 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0; url=https://botwave1904.github.io/LOTEE/nadie-mira-arriba/"><link rel="canonical" href="https://botwave1904.github.io/LOTEE/nadie-mira-arriba/"><title>Nadie Mira Arriba — nueva dirección</title><style>body{background:#171525;color:#f8edcf;font:18px/1.6 system-ui;max-width:50ch;margin:15vh auto;padding:24px}a{color:#ffdc75}</style></head><body><h1>Nadie Mira Arriba</h1><p>Ahora forma parte del universo lotee.</p><a href="https://botwave1904.github.io/LOTEE/nadie-mira-arriba/">Continuar al juego →</a></body></html>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="0; url=https://botwave1904.github.io/LOTEE/nadie-mira-arriba/" http-equiv="refresh"/><link href="https://botwave1904.github.io/LOTEE/nadie-mira-arriba/" rel="canonical"/><title data-en="Nadie Mira Arriba — new address" data-es="Nadie Mira Arriba — nueva dirección">Nadie Mira Arriba — new address</title><style>body{background:#171525;color:#f8edcf;font:18px/1.6 system-ui;max-width:50ch;margin:15vh auto;padding:24px}a{color:#ffdc75}</style><style>html[data-language-loading] body{visibility:hidden}</style><script>/* One explicit origin-wide choice. Never infer a locale from the browser. */
+(() => {
+ 'use strict';
+ const KEY='botwave.language.explicit.v1';
+ let lang='en';
+ try {const saved=localStorage.getItem(KEY);if(saved==='es'||saved==='en')lang=saved;}catch{}
+ document.documentElement.lang=lang;
+ if(lang==='es')document.documentElement.setAttribute('data-language-loading','');
+ function apply(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-en][data-es]').forEach(el=>{el.textContent=el.getAttribute('data-'+lang);});
+  for(const attr of ['content','aria-label','alt','title'])document.querySelectorAll('[data-en-'+attr+']').forEach(el=>el.setAttribute(attr,el.getAttribute('data-'+lang+'-'+attr)));
+  document.querySelectorAll('[data-site-language]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.siteLanguage===lang)));
+  document.documentElement.removeAttribute('data-language-loading');
+ }
+ function choose(value,origin='site',persist=true){
+  if(value!=='en'&&value!=='es')return;
+  lang=value;if(persist)try{localStorage.setItem(KEY,value);}catch{}
+  apply();window.dispatchEvent(new CustomEvent('botwave:language',{detail:{lang,origin}}));
+ }
+ window.BotwaveLocale={KEY,get lang(){return lang;},choose,apply};
+ document.addEventListener('click',e=>{const button=e.target.closest('button[data-site-language]');if(button)choose(button.dataset.siteLanguage);});
+ document.addEventListener('DOMContentLoaded',apply,{once:true});
+ window.addEventListener('storage',e=>{if(e.key===KEY)choose(e.newValue==='es'?'es':'en','storage',false);});
+})();
+</script><meta content="en_US" data-en-content="en_US" data-es-content="es_MX" property="og:locale"/></head><body><div aria-label="Language" class="locale-control" data-en-aria-label="Language" data-es-aria-label="Idioma" role="group"><button aria-label="Switch to English" aria-pressed="true" data-en-aria-label="Switch to English" data-es-aria-label="Cambiar a inglés" data-site-language="en" lang="en" type="button">EN</button><button aria-label="Switch to Spanish" aria-pressed="false" data-en-aria-label="Switch to Spanish" data-es-aria-label="Cambiar a español" data-site-language="es" lang="es" type="button">ES</button></div><h1>Nadie Mira Arriba</h1><p><span data-en="Now part of the lotee universe." data-es="Ahora forma parte del universo lotee.">Now part of the lotee universe.</span></p><a href="https://botwave1904.github.io/LOTEE/nadie-mira-arriba/"><span data-en="Continue to the game →" data-es="Continuar al juego →">Continue to the game →</span></a></body></html>
