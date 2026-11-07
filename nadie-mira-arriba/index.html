@@ -22,6 +22,7 @@
  window.BotwaveLocale={KEY,get lang(){return lang;},choose,apply};
  document.addEventListener('click',e=>{const button=e.target.closest('button[data-site-language]');if(button)choose(button.dataset.siteLanguage);});
  document.addEventListener('DOMContentLoaded',apply,{once:true});
+ window.addEventListener('pageshow',()=>{let saved='en';try{if(localStorage.getItem(KEY)==='es')saved='es';}catch{}if(saved!==lang)choose(saved,'history',false);else apply();});
  window.addEventListener('storage',e=>{if(e.key===KEY)choose(e.newValue==='es'?'es':'en','storage',false);});
 })();
 </script><meta content="en_US" data-en-content="en_US" data-es-content="es_MX" property="og:locale"/></head><body><div aria-label="Language" class="locale-control" data-en-aria-label="Language" data-es-aria-label="Idioma" role="group"><button aria-label="Switch to English" aria-pressed="true" data-en-aria-label="Switch to English" data-es-aria-label="Cambiar a inglés" data-site-language="en" lang="en" type="button">EN</button><button aria-label="Switch to Spanish" aria-pressed="false" data-en-aria-label="Switch to Spanish" data-es-aria-label="Cambiar a español" data-site-language="es" lang="es" type="button">ES</button></div><h1>Nadie Mira Arriba</h1><p><span data-en="Now part of the lotee universe." data-es="Ahora forma parte del universo lotee.">Now part of the lotee universe.</span></p><a href="https://botwave1904.github.io/LOTEE/nadie-mira-arriba/"><span data-en="Continue to the game →" data-es="Continuar al juego →">Continue to the game →</span></a></body></html>
